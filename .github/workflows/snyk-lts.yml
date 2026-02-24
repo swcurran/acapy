@@ -40,8 +40,17 @@ jobs:
       with:
         image: acapy-agent
         args: --file=docker/Dockerfile
-        # Adding a snyk monitor command which continuously monitors the image for vulnerabilities 
-        # See https://support.snyk.io/hc/en-us/articles/360000920818-What-are-the-differences-among-snyk-test-monitor-and-protect for more details 
+
+    - name: Run Snyk monitor for continuous monitoring
+      # Adding a snyk monitor command which continuously monitors the image for vulnerabilities 
+      # See https://support.snyk.io/hc/en-us/articles/360000920818-What-are-the-differences-among-snyk-test-monitor-and-protect for more details 
+      continue-on-error: true
+      uses: snyk/actions/docker@9adf32b1121593767fc3c057af55b55db032dc04 # 1.0.0
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        image: acapy-agent
+        args: --file=docker/Dockerfile
         command: monitor
 
       # Replace any "null" security severity values with 0. The null value is used in the case
