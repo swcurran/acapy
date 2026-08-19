@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../DIDResolution/">
+        <link rel="prev" href="../AdminAPI/">
       
       
-        <link rel="next" href="../AnonCredsMethods/">
+        <link rel="next" href="../KanonStorage/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Reusing DIDComm Connections Between Agents - ACA-Py Docs</title>
+        <title>OAuth 2.0 Resource Server - ACA-Py Docs</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reusing-connections-between-agents" class="md-skip">
+        <a href="#oauth2-resource-server-authentication" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reusing DIDComm Connections Between Agents
+              OAuth 2.0 Resource Server
             
           </span>
         </div>
@@ -746,10 +746,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../OAuthResourceServer/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OAuth 2.0 Resource Server
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -765,6 +792,304 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scopes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scopes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scope-to-decorator-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope-to-decorator mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#startup-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Startup Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-validation-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token Validation Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multitenancy-and-the-wallet_id-claim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multitenancy and the wallet_id Claim
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multitenancy and the wallet_id Claim">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#provisioning-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provisioning flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-claim-storage-and-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Claim Storage and Compatibility
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Request Claim Storage and Compatibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-both-metadata-and-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why both metadata and settings?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-access-pattern-for-core-and-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended access pattern for core and plugins
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotating-routes-with-scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotating Routes with Scopes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorization-server-setup-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization Server Setup Guidance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authorization Server Setup Guidance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keycloak-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keycloak Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keycloak-hostname-and-issuer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keycloak Hostname and Issuer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo-docker-compose-with-keycloak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo: Docker Compose with Keycloak
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Demo: Docker Compose with Keycloak">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migrating-from-api-key-aca-py-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migrating from API Key / ACA-Py JWT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -942,37 +1267,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reusing DIDComm Connections Between Agents
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ReuseConnection/" class="md-nav__link">
         
   
   
@@ -988,165 +1286,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick Start
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Quick Start">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-generate-a-reusable-invitation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Generate a Reusable Invitation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-verify-the-response" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Verify the Response
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-reuse-the-connection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Reuse the Connection
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Concepts
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Key Concepts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-enables-connection-reuse" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Enables Connection Reuse?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#handling-reuse-events" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Handling Reuse Events
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Handling Reuse Events">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-event-notification" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example Event Notification
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#listening-for-reuse-events" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Listening for Reuse Events
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#demo-vs-production" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Demo vs. Production
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3301,44 +3440,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
+  <a href="#table-of-contents" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quick Start
+        Table of Contents
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Quick Start">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scopes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scopes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-generate-a-reusable-invitation" class="md-nav__link">
+  <a href="#scope-to-decorator-mapping" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Generate a Reusable Invitation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-verify-the-response" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Verify the Response
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-reuse-the-connection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Reuse the Connection
+        Scope-to-decorator mapping
       
     </span>
   </a>
@@ -3351,22 +3501,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Concepts
+        Configuration
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Key Concepts">
+    <nav class="md-nav" aria-label="Configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#what-enables-connection-reuse" class="md-nav__link">
+  <a href="#startup-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Enables Connection Reuse?
+        Startup Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-validation-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token Validation Modes
       
     </span>
   </a>
@@ -3379,33 +3551,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#handling-reuse-events" class="md-nav__link">
+  <a href="#multitenancy-and-the-wallet_id-claim" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Handling Reuse Events
+        Multitenancy and the wallet_id Claim
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Handling Reuse Events">
+    <nav class="md-nav" aria-label="Multitenancy and the wallet_id Claim">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-event-notification" class="md-nav__link">
+  <a href="#provisioning-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Event Notification
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#listening-for-reuse-events" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Listening for Reuse Events
+        Provisioning flow
       
     </span>
   </a>
@@ -3418,10 +3579,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#request-claim-storage-and-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Troubleshooting
+        Request Claim Storage and Compatibility
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Request Claim Storage and Compatibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-both-metadata-and-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why both metadata and settings?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-access-pattern-for-core-and-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended access pattern for core and plugins
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotating-routes-with-scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotating Routes with Scopes
       
     </span>
   </a>
@@ -3429,10 +3629,88 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo-vs-production" class="md-nav__link">
+  <a href="#authorization-server-setup-guidance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Demo vs. Production
+        Authorization Server Setup Guidance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authorization Server Setup Guidance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keycloak-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keycloak Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keycloak-hostname-and-issuer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keycloak Hostname and Issuer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo-docker-compose-with-keycloak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo: Docker Compose with Keycloak
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Demo: Docker Compose with Keycloak">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migrating-from-api-key-aca-py-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migrating from API Key / ACA-Py JWT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
       
     </span>
   </a>
@@ -3459,68 +3737,158 @@
   
 
 
-<h1 id="reusing-connections-between-agents">Reusing Connections Between Agents<a class="headerlink" href="#reusing-connections-between-agents" title="Permanent link">&para;</a></h1>
-<p>Leverage ACA‑Py's Out‑of‑Band (OOB) protocol to reuse existing connections instead of creating new ones for every interaction.</p>
+<h1 id="oauth2-resource-server-authentication">OAuth2 Resource Server Authentication <!-- omit in toc --><a class="headerlink" href="#oauth2-resource-server-authentication" title="Permanent link">&para;</a></h1>
+<p>ACA-Py can be configured to act as an <strong>OAuth2 Resource Server</strong>, delegating all authentication and authorisation to an external <strong>Authorization Server (AS)</strong> such as Keycloak, Auth0, or any other OIDC-compliant provider. This replaces the built-in API key and the ACA-Py-issued multitenant JWT with access tokens that the AS issues directly to callers.</p>
+<h2 id="table-of-contents">Table of Contents <!-- omit in toc --><a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#request-flow">Request Flow</a></li>
+<li><a href="#scopes">Scopes</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#startup-parameters">Startup Parameters</a></li>
+<li><a href="#environment-variables">Environment Variables</a></li>
+<li><a href="#token-validation-modes">Token Validation Modes</a></li>
+<li><a href="#multitenancy-and-the-wallet_id-claim">Multitenancy and the <code>wallet_id</code> Claim</a></li>
+<li><a href="#request-claim-storage-and-compatibility">Request Claim Storage and Compatibility</a></li>
+<li><a href="#annotating-routes-with-scopes">Annotating Routes with Scopes</a></li>
+<li><a href="#authorization-server-setup-guidance">Authorization Server Setup Guidance</a></li>
+<li><a href="#keycloak-example">Keycloak Example</a></li>
+<li><a href="#keycloak-hostname-and-issuer">Keycloak Hostname and Issuer</a></li>
+<li><a href="#demo-docker-compose-with-keycloak">Demo: Docker Compose with Keycloak</a></li>
+<li><a href="#scripts">Scripts</a></li>
+<li><a href="#migrating-from-api-key--aca-py-jwt">Migrating from API Key / ACA-Py JWT</a></li>
+<li><a href="#limitations">Limitations</a></li>
+</ul>
 <hr />
-<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<p><em>For developers who want code now</em></p>
-<h3 id="1-generate-a-reusable-invitation">1. Generate a Reusable Invitation<a class="headerlink" href="#1-generate-a-reusable-invitation" title="Permanent link">&para;</a></h3>
-<p>Use the following API call to create an invitation that supports connection reuse. Note that the invitation must include a resolvable DID (e.g., <code>did:peer:2</code>) in its <code>services</code> field. This is achieved by setting the <code>use_did_method</code> parameter.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s1">'http://your-agent-admin:8031/out-of-band/create-invitation?auto_accept=true&amp;multi_use=true'</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">'accept: application/json'</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">'Authorization: Bearer YOUR_API_KEY'</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="s1">    "handshake_protocols": ["https://didcomm.org/didexchange/1.1"],</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="s1">    "protocol_version": "1.1",</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="s1">    "use_did_method": "did:peer:2"</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="s1">  }'</span>
-</code></pre></div>
-<h3 id="2-verify-the-response">2. Verify the Response<a class="headerlink" href="#2-verify-the-response" title="Permanent link">&para;</a></h3>
-<p>Ensure that the response contains a <code>services</code> array with a resolvable DID:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"initial"</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">"trace"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">"invi_msg_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ffaf017e-3980-45b7-ad43-a90a609d6eaf"</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">"oob_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed7cc3f6-62cd-4b53-9285-534c198a8476"</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">"invitation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://didcomm.org/out-of-band/1.1/invitation"</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ffaf017e-3980-45b7-ad43-a90a609d6eaf"</span><span class="p">,</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First invitation to Barry"</span><span class="p">,</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example-image.com"</span><span class="p">,</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nt">"handshake_protocols"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">      </span><span class="s2">"https://didcomm.org/didexchange/1.1"</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="p">],</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nt">"services"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">      </span><span class="s2">"did:peer:2.Vz6MkqRYqQiSgvZQdnBytw86Qbs2ZWUkGv22od935YF4s8M7"</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="nt">"invitation_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example-admin.com?oob=example-1-invite-encoded-url"</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="p">}</span>
-</code></pre></div>
-<h3 id="3-reuse-the-connection">3. Reuse the Connection<a class="headerlink" href="#3-reuse-the-connection" title="Permanent link">&para;</a></h3>
-<p>When an invitee scans subsequent invitations that contain the <strong>same DID</strong>, ACA‑Py automatically sends a <code>reuse</code> message instead of creating a new connection.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>In the traditional ACA-Py security model there are two mechanisms for protecting the Admin API:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Parameter</th>
+<th>Token issuer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API key</td>
+<td><code>--admin-api-key</code></td>
+<td>n/a — static shared secret</td>
+</tr>
+<tr>
+<td>Multitenant JWT</td>
+<td><code>multitenant.jwt_secret</code></td>
+<td>ACA-Py itself</td>
+</tr>
+</tbody>
+</table>
+<p>Both modes are binary — a caller is either fully authorised or not. There is no concept of scopes or roles.</p>
+<p>The OAuth2 Resource Server mode introduces a third option:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Parameter</th>
+<th>Token issuer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OAuth2 RS</td>
+<td><code>--oauth-jwks-uri</code> / <code>--oauth-introspection-endpoint</code></td>
+<td>External AS</td>
+</tr>
+</tbody>
+</table>
+<p>When OAuth2 RS mode is active:</p>
+<ul>
+<li>ACA-Py <strong>never issues tokens</strong> — the <code>create_auth_token</code> multitenant endpoint is not used.</li>
+<li>ACA-Py <strong>never stores or validates a shared secret</strong> for bearer tokens.</li>
+<li>The AS is the sole authority on who may call which endpoints.</li>
+<li>Individual routes declare the <strong>minimum scope</strong> required to access them.</li>
+</ul>
 <hr />
-<h2 id="key-concepts">Key Concepts<a class="headerlink" href="#key-concepts" title="Permanent link">&para;</a></h2>
-<h3 id="what-enables-connection-reuse">What Enables Connection Reuse?<a class="headerlink" href="#what-enables-connection-reuse" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Resolvable DID</strong>  </li>
-<li>The invitation’s <code>services</code> array <strong>must</strong> include a resolvable DID (e.g., <code>did:peer:2</code> or <code>did:peer:4</code>), as specified by the <code>use_did_method</code> parameter.</li>
-<li>
-<p><em>Do not use inline or non‑resolvable DIDs (e.g., <code>did:key</code>).</em></p>
-</li>
-<li>
-<p><strong>Consistent DID Across Invitations</strong>  </p>
-</li>
-<li>
-<p>The inviter (e.g., the issuer) must reuse the same resolvable DID in subsequent invitations where reuse is desired. This consistency is enforced by setting <code>use_did_method</code> to <code>did:peer:2</code> (or <code>did:peer:4</code>) in the API call.</p>
-</li>
-<li>
-<p><strong>Protocol Version</strong>  </p>
-</li>
-<li>Use <code>didexchange/1.1</code> (avoid the legacy <code>1.0</code>).</li>
-</ol>
-<h4 id="critical-api-parameters">Critical API Parameters<a class="headerlink" href="#critical-api-parameters" title="Permanent link">&para;</a></h4>
+<h2 id="request-flow">Request Flow<a class="headerlink" href="#request-flow" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+    participant C as Client
+    participant AS as Authorization Server
+    participant RS as ACA-Py (Resource Server)
+
+    C-&gt;&gt;AS: (1) Authenticate&lt;br/&gt;(OIDC / PKCE / client credentials / etc.)
+    AS--&gt;&gt;C: (2) Access token
+
+    C-&gt;&gt;RS: (3) API request&lt;br/&gt;Authorization: Bearer [token]
+
+    RS-&gt;&gt;AS: (4) Fetch JWKS (cached)
+    AS--&gt;&gt;RS: JWKS signing keys
+    Note over RS: (5) Validate signature,&lt;br/&gt;expiry, iss, aud
+
+    opt Opaque token introspection fallback
+      RS-&gt;&gt;AS: (6) POST introspect token
+      AS--&gt;&gt;RS: { active, scope, sub, wallet_id, … }
+    end
+
+    Note over RS: (7) Check token scopes&lt;br/&gt;against route requirement
+
+    RS--&gt;&gt;C: (8) API response</code></pre>
+<p>JWT validation occurs on every request. Introspection is only used for opaque tokens or when JWT decoding falls back to introspection. JWKS keys are cached in memory by <code>PyJWKClient</code> so the round-trip to the AS only occurs when the key set changes.</p>
+<hr />
+<h2 id="scopes">Scopes<a class="headerlink" href="#scopes" title="Permanent link">&para;</a></h2>
+<p>ACA-Py uses the <code>scope</code> claim from the access token. Scopes are space-separated strings following the convention <code>acapy:&lt;resource&gt;[:&lt;action&gt;]</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>Intended use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>acapy:admin</code></td>
+<td>Full administrative access — wallet management, server config, ledger operations</td>
+</tr>
+<tr>
+<td><code>acapy:tenant</code></td>
+<td>Tenant-level access — credentials, connections, presentations for a specific sub-wallet</td>
+</tr>
+<tr>
+<td><code>acapy:tenant:read</code></td>
+<td>Read-only tenant access</td>
+</tr>
+<tr>
+<td><code>acapy:wallet:create</code></td>
+<td>Permission to create new sub-wallets only</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scope-to-decorator-mapping">Scope-to-decorator mapping<a class="headerlink" href="#scope-to-decorator-mapping" title="Permanent link">&para;</a></h3>
+<p>Route handlers are annotated with one of two authentication decorators. In OAuth mode each decorator enforces a minimum scope:</p>
+<table>
+<thead>
+<tr>
+<th>Decorator</th>
+<th>OAuth scope required</th>
+<th>Legacy auth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@admin_authentication</code></td>
+<td><code>acapy:admin</code></td>
+<td><code>x-api-key</code> or insecure mode</td>
+</tr>
+<tr>
+<td><code>@tenant_authentication</code></td>
+<td><code>acapy:tenant</code> <strong>or</strong> <code>acapy:admin</code></td>
+<td>Bearer JWT or <code>x-api-key</code></td>
+</tr>
+</tbody>
+</table>
+<p>A request passes scope enforcement if it holds <strong>at least one</strong> of the required scopes. <code>acapy:admin</code> implies full access and satisfies both decorators. All <code>/multitenancy/*</code> routes use <code>@admin_authentication</code> and therefore require <code>acapy:admin</code>.</p>
+<hr />
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<h3 id="startup-parameters">Startup Parameters<a class="headerlink" href="#startup-parameters" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -3530,88 +3898,394 @@
 </thead>
 <tbody>
 <tr>
-<td><code>use_did_method</code></td>
-<td>Set to <code>did:peer:2</code> or <code>did:peer:4</code> (required for reuse).</td>
+<td><code>--oauth-enabled</code></td>
+<td>Enable OAuth2 RS mode explicitly. Implied by either of the two parameters below.</td>
 </tr>
 <tr>
-<td><code>multi_use</code></td>
-<td>Optional but recommended for enabling multi‑use invitations.</td>
+<td><code>--oauth-jwks-uri &lt;url&gt;</code></td>
+<td>JWKS endpoint of the AS. ACA-Py fetches and caches signing keys from here to validate JWT access tokens locally.</td>
 </tr>
 <tr>
-<td><code>handshake_protocols</code></td>
-<td>Must include <code>https://didcomm.org/didexchange/1.1</code>.</td>
+<td><code>--oauth-issuer &lt;issuer&gt;</code></td>
+<td>Expected value of the <code>iss</code> claim. Tokens with a different issuer are rejected.</td>
+</tr>
+<tr>
+<td><code>--oauth-audience &lt;audience&gt;</code></td>
+<td>Expected value of the <code>aud</code> claim. <strong>Required whenever <code>--oauth-jwks-uri</code> is set</strong> — ACA-Py refuses to start without it, so JWT access tokens are always bound to this resource server.</td>
+</tr>
+<tr>
+<td><code>--oauth-introspection-endpoint &lt;url&gt;</code></td>
+<td>RFC 7662 introspection endpoint. Used as a fallback for opaque tokens, or as the sole validation method when <code>--oauth-jwks-uri</code> is not set.</td>
+</tr>
+<tr>
+<td><code>--oauth-introspection-client-id &lt;id&gt;</code></td>
+<td>Client ID for HTTP Basic Auth on the introspection endpoint. Required when the introspection endpoint is configured.</td>
+</tr>
+<tr>
+<td><code>--oauth-introspection-client-secret &lt;secret&gt;</code></td>
+<td>Client secret for HTTP Basic Auth on the introspection endpoint.</td>
+</tr>
+<tr>
+<td><code>--oauth-http-timeout &lt;seconds&gt;</code></td>
+<td>Timeout for HTTP calls to the AS (JWKS key fetches and token introspection). Default 10.</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="handling-reuse-events">Handling Reuse Events<a class="headerlink" href="#handling-reuse-events" title="Permanent link">&para;</a></h2>
-<p>When a connection is reused, ACA-Py automatically emits an event notification. This event contains the <code>connection_id</code> of the reused connection, allowing applications to track reuse activity programmatically.</p>
-<h3 id="example-event-notification">Example Event Notification<a class="headerlink" href="#example-event-notification" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">"thread_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"096cf986-9211-450c-9cbb-a6d701c4d9ca"</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">"connection_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28818825-98a3-44c7-b1cc-d429c1583a1d"</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Connection 28818825-98a3-44c7-b1cc-d429c1583a1d is being reused for invitation 6f6af313-3735-4ac1-b972-aafebd3731bc"</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
+<p>When any of <code>--oauth-jwks-uri</code> or <code>--oauth-introspection-endpoint</code> is provided, <strong>neither <code>--admin-api-key</code> nor <code>--admin-insecure-mode</code> is required</strong>.</p>
+<p>Configuration is validated at startup and ACA-Py refuses to start when:</p>
+<ul>
+<li>OAuth mode is enabled (via any of the three flags) but neither <code>--oauth-jwks-uri</code> nor <code>--oauth-introspection-endpoint</code> is set — there would be no way to validate tokens.</li>
+<li><code>--oauth-introspection-endpoint</code> is set without <code>--oauth-introspection-client-id</code>.</li>
+<li><code>--oauth-jwks-uri</code> is set without <code>--oauth-audience</code> — without an expected audience, any signature-valid token from the JWKS would be accepted regardless of its intended recipient (token reuse / confused-deputy on a shared Authorization Server).</li>
+</ul>
+<p>Example startup using JWKS validation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>aca-py<span class="w"> </span>start<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--admin<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="m">8031</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>--oauth-jwks-uri<span class="w"> </span>https://auth.example.com/realms/acapy/protocol/openid-connect/certs<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>--oauth-issuer<span class="w"> </span>https://auth.example.com/realms/acapy<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>--oauth-audience<span class="w"> </span>acapy-resource-server<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span>--multitenant<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span>--multitenant-admin<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span>...
 </code></pre></div>
-<h3 id="listening-for-reuse-events">Listening for Reuse Events<a class="headerlink" href="#listening-for-reuse-events" title="Permanent link">&para;</a></h3>
-<p>Applications can subscribe to these events via the WebSocket or webhooks event stream provided by ACA-Py. To listen for reuse events:</p>
+<p>Example startup using introspection only (for opaque tokens):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>aca-py<span class="w"> </span>start<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>--admin<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="m">8031</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>--oauth-introspection-endpoint<span class="w"> </span>https://auth.example.com/oauth/introspect<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>--oauth-introspection-client-id<span class="w"> </span>acapy-rs<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span>--oauth-introspection-client-secret<span class="w"> </span>&lt;secret&gt;<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span>...
+</code></pre></div>
+<h3 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
+<p>Each parameter has a corresponding environment variable:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Environment variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--oauth-jwks-uri</code></td>
+<td><code>ACAPY_OAUTH_JWKS_URI</code></td>
+</tr>
+<tr>
+<td><code>--oauth-issuer</code></td>
+<td><code>ACAPY_OAUTH_ISSUER</code></td>
+</tr>
+<tr>
+<td><code>--oauth-audience</code></td>
+<td><code>ACAPY_OAUTH_AUDIENCE</code></td>
+</tr>
+<tr>
+<td><code>--oauth-introspection-endpoint</code></td>
+<td><code>ACAPY_OAUTH_INTROSPECTION_ENDPOINT</code></td>
+</tr>
+<tr>
+<td><code>--oauth-introspection-client-id</code></td>
+<td><code>ACAPY_OAUTH_INTROSPECTION_CLIENT_ID</code></td>
+</tr>
+<tr>
+<td><code>--oauth-introspection-client-secret</code></td>
+<td><code>ACAPY_OAUTH_INTROSPECTION_CLIENT_SECRET</code></td>
+</tr>
+<tr>
+<td><code>--oauth-http-timeout</code></td>
+<td><code>ACAPY_OAUTH_HTTP_TIMEOUT</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="token-validation-modes">Token Validation Modes<a class="headerlink" href="#token-validation-modes" title="Permanent link">&para;</a></h3>
+<p><strong>JWT via JWKS (recommended)</strong></p>
+<p>ACA-Py uses <code>PyJWKClient</code> (bundled with <code>pyjwt &gt;= 2.x</code>) to fetch signing keys from the JWKS endpoint and validate tokens locally. Signature, expiry, issuer, and audience are all checked. Supported algorithms: RS256/384/512, ES256/384/512, PS256/384/512.</p>
+<p>JWKS key fetches happen on a cache miss (first request, or key rotation) and are subject to <code>--oauth-http-timeout</code>. The fetch runs in a worker thread so a slow AS does not block other requests.</p>
+<p><strong>Introspection fallback</strong></p>
+<p>If JWKS validation fails with a decode error (e.g. the token is opaque, not a JWT) and <code>--oauth-introspection-endpoint</code> is configured, ACA-Py falls back to RFC 7662 introspection. The introspection response must include <code>"active": true</code>; the <code>scope</code> field is used for scope enforcement.</p>
+<p>Introspection calls use a shared HTTP session with a timeout of <code>--oauth-http-timeout</code> seconds (default 10). If the AS cannot be reached (network error or timeout), ACA-Py responds with <code>503 Service Unavailable</code> rather than <code>401</code>, since the failure says nothing about the token's validity.</p>
+<p><strong>Combined mode</strong></p>
+<p>Providing both <code>--oauth-jwks-uri</code> and <code>--oauth-introspection-endpoint</code> gives you JWT-first validation with opaque token fallback. This covers deployments where the AS issues different token types to different clients.</p>
+<hr />
+<h2 id="multitenancy-and-the-wallet_id-claim">Multitenancy and the <code>wallet_id</code> Claim<a class="headerlink" href="#multitenancy-and-the-wallet_id-claim" title="Permanent link">&para;</a></h2>
+<p>In multitenant deployments, ACA-Py needs to know which sub-wallet a request should be routed to. With the built-in JWT this was encoded as <code>wallet_id</code> in the token payload. With external OAuth tokens, the AS must include a <strong>custom claim</strong> named <code>wallet_id</code> containing the ACA-Py sub-wallet UUID.</p>
+<p>When ACA-Py receives a request:</p>
 <ol>
-<li>Connect to the ACA-Py WebSocket server or setup a webhook endpoint.</li>
-<li>Filter events with <code>type=connection_reuse</code>.</li>
-<li>Handle the event in your application logic.</li>
+<li>The access token is validated (JWKS or introspection).</li>
+<li>The <code>wallet_id</code> claim is read from the token.</li>
+<li>The corresponding <code>WalletRecord</code> is loaded from storage.</li>
+<li>The request is executed in that wallet's profile context.</li>
 </ol>
+<p>If <code>wallet_id</code> is absent from the token, the request is <strong>rejected with <code>401 Unauthorized</code> unless the token carries the <code>acapy:admin</code> scope</strong>. Admin-scoped tokens without a <code>wallet_id</code> run against the <strong>base wallet</strong>. This prevents a misconfigured AS (e.g. a tenant client missing its <code>wallet_id</code> mapper) from silently granting tenant tokens access to base-wallet data.</p>
+<h3 id="provisioning-flow">Provisioning flow<a class="headerlink" href="#provisioning-flow" title="Permanent link">&para;</a></h3>
+<ol>
+<li>An admin caller (holding <code>acapy:admin</code> scope) creates a sub-wallet via <code>POST /multitenancy/wallet</code>. A <code>wallet_key</code> must be provided even when <code>key_management_mode</code> is <code>managed</code> — ACA-Py stores and manages the key but Askar requires one at creation time.</li>
+<li>ACA-Py returns the new <code>wallet_id</code> in the response.</li>
+<li>The operator configures the AS to embed that <code>wallet_id</code> as a custom claim in tokens issued to the corresponding user or client.</li>
+</ol>
+<p>In Keycloak this is done with a <strong>Protocol Mapper</strong> of type <em>Hardcoded Claim</em>:
+- Token Claim Name: <code>wallet_id</code>
+- Claim Value: <code>&lt;the ACA-Py wallet UUID&gt;</code>
+- Add to access token: enabled</p>
 <hr />
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h2 id="request-claim-storage-and-compatibility">Request Claim Storage and Compatibility<a class="headerlink" href="#request-claim-storage-and-compatibility" title="Permanent link">&para;</a></h2>
+<p>OAuth token-derived values (<code>scope</code>, <code>sub</code>, <code>wallet_id</code>) are attached to the
+request in <code>AdminRequestContext.metadata</code>.</p>
+<p>In addition, ACA-Py mirrors these values into <strong>request-scoped settings</strong> for
+compatibility with integrations that already read from <code>context.settings</code> /
+<code>context.profile.settings</code>.</p>
+<p>Request-scoped settings keys:</p>
 <table>
 <thead>
 <tr>
-<th><strong>Symptom</strong></th>
-<th><strong>Likely Cause</strong></th>
-<th><strong>Solution</strong></th>
+<th>Claim</th>
+<th>Request-scoped setting key</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>New connection created instead of reused</td>
-<td>Invitation uses a non‑resolvable DID, <code>use_did_method</code> not set</td>
-<td>Set <code>use_did_method=did:peer:2</code> (or <code>did:peer:4</code>) in the <code>/out-of-band/create-invitation</code> call.</td>
+<td><code>scope</code></td>
+<td><code>auth.scopes</code></td>
 </tr>
 <tr>
-<td><code>reuse</code> message not sent</td>
-<td>Invitee agent doesn’t support OOB v1.1</td>
-<td>Ensure both agents are using <code>didexchange/1.1</code>.</td>
+<td><code>sub</code></td>
+<td><code>auth.subject</code></td>
 </tr>
 <tr>
-<td>DID resolution failed</td>
-<td>The resolver does not support the chosen DID</td>
-<td>Configure a DID resolver that supports the selected peer DID method.</td>
+<td><code>wallet_id</code></td>
+<td><code>auth.wallet_id</code></td>
 </tr>
 </tbody>
 </table>
+<h3 id="why-both-metadata-and-settings">Why both metadata and settings?<a class="headerlink" href="#why-both-metadata-and-settings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>metadata</code> is the canonical location for per-request auth claims.</li>
+<li>Request-scoped settings provide a low-friction compatibility path for code
+  and plugins that already rely on settings access patterns.</li>
+<li>This avoids storing OAuth claims in global/shared settings while still
+  reducing break risk for existing extensions.</li>
+</ul>
+<h3 id="recommended-access-pattern-for-core-and-plugins">Recommended access pattern for core and plugins<a class="headerlink" href="#recommended-access-pattern-for-core-and-plugins" title="Permanent link">&para;</a></h3>
+<p>Use helper functions from <code>acapy_agent.admin.auth_context</code> instead of reading
+<code>context.metadata</code> or settings directly. The helpers normalize values and
+handle both storage paths safely.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">acapy_agent.admin.auth_context</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">get_auth_scopes</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">get_auth_subject</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">get_auth_wallet_id</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">has_auth_wallet_id</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">context</span> <span class="o">=</span> <span class="n">request</span><span class="p">[</span><span class="s2">"context"</span><span class="p">]</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">scopes</span> <span class="o">=</span> <span class="n">get_auth_scopes</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">subject</span> <span class="o">=</span> <span class="n">get_auth_subject</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">wallet_id</span> <span class="o">=</span> <span class="n">get_auth_wallet_id</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">is_subwallet</span> <span class="o">=</span> <span class="n">has_auth_wallet_id</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div>
 <hr />
-<h2 id="demo-vs-production">Demo vs. Production<a class="headerlink" href="#demo-vs-production" title="Permanent link">&para;</a></h2>
+<h2 id="annotating-routes-with-scopes">Annotating Routes with Scopes<a class="headerlink" href="#annotating-routes-with-scopes" title="Permanent link">&para;</a></h2>
+<p>Use the <code>require_scope</code> decorator from <code>acapy_agent.admin.decorators.auth</code>. It must be stacked <strong>inside</strong> <code>tenant_authentication</code> (or <code>admin_authentication</code>) so that authentication is checked before scope enforcement.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">acapy_agent.admin.decorators.auth</span><span class="w"> </span><span class="kn">import</span> <span class="n">require_scope</span><span class="p">,</span> <span class="n">tenant_authentication</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nd">@docs</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">"credential"</span><span class="p">],</span> <span class="n">summary</span><span class="o">=</span><span class="s2">"Issue a credential"</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nd">@tenant_authentication</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nd">@require_scope</span><span class="p">(</span><span class="s2">"acapy:tenant"</span><span class="p">,</span> <span class="s2">"acapy:admin"</span><span class="p">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">credential_issue</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">web</span><span class="o">.</span><span class="n">Request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">web</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="o">...</span>
+</code></pre></div>
+<p>A request passes if its token contains <strong>any one</strong> of the listed scopes. To require a scope that only admins hold, list only <code>"acapy:admin"</code>.</p>
+<p>For route logic, prefer the auth-context helpers:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">acapy_agent.admin.auth_context</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  <span class="n">get_auth_scopes</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  <span class="n">get_auth_subject</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  <span class="n">get_auth_wallet_id</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">context</span> <span class="o">=</span> <span class="n">request</span><span class="p">[</span><span class="s2">"context"</span><span class="p">]</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">scopes</span> <span class="o">=</span> <span class="n">get_auth_scopes</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">subject</span> <span class="o">=</span> <span class="n">get_auth_subject</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">wallet_id</span> <span class="o">=</span> <span class="n">get_auth_wallet_id</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="authorization-server-setup-guidance">Authorization Server Setup Guidance<a class="headerlink" href="#authorization-server-setup-guidance" title="Permanent link">&para;</a></h2>
+<h3 id="keycloak-example">Keycloak Example<a class="headerlink" href="#keycloak-example" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Create a Realm</strong> (e.g. <code>acapy</code>).</p>
+</li>
+<li>
+<p><strong>Create a Client</strong> representing ACA-Py as the resource server:</p>
+</li>
+<li>Client ID: <code>acapy-resource-server</code></li>
+<li>Access Type: <code>bearer-only</code></li>
+<li>
+<p>This client does not issue tokens — it is used only as the audience target.</p>
+</li>
+<li>
+<p><strong>Create Client Scopes</strong> for each ACA-Py scope:</p>
+</li>
+<li><code>acapy:admin</code></li>
+<li><code>acapy:tenant</code></li>
+<li><code>acapy:tenant:read</code></li>
+<li><code>acapy:wallet:create</code></li>
+<li>
+<p>Set <em>Include in Token Scope</em> to enabled on each.</p>
+</li>
+<li>
+<p><strong>Create Clients for callers</strong>:</p>
+</li>
+<li>
+<p><strong>Admin / controller</strong> (server-to-server): confidential client, <code>client_credentials</code> grant, assign <code>acapy:admin</code> as default scope. Add an <em>Audience</em> protocol mapper pointing to <code>acapy-resource-server</code>.</p>
+</li>
+<li><strong>Tenant service account</strong> (server-to-server): confidential client, <code>client_credentials</code> grant, assign <code>acapy:tenant</code> as default scope. Add an <em>Audience</em> mapper and a <em>Hardcoded Claim</em> mapper for <code>wallet_id</code>.</li>
+<li>
+<p><strong>End-user client</strong> (browser): public client, authorization code + PKCE, assign <code>acapy:tenant</code> as default scope. Add <em>Audience</em> and <code>wallet_id</code> mappers as above.</p>
+</li>
+<li>
+<p><strong>Configure ACA-Py</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>--oauth-jwks-uri  https://&lt;keycloak-host&gt;/realms/acapy/protocol/openid-connect/certs
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>--oauth-issuer    https://&lt;keycloak-host&gt;/realms/acapy
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>--oauth-audience  acapy-resource-server
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="keycloak-hostname-and-issuer">Keycloak Hostname and Issuer<a class="headerlink" href="#keycloak-hostname-and-issuer" title="Permanent link">&para;</a></h3>
+<p>The <code>iss</code> claim in a Keycloak-issued token reflects the URL from which the token was requested. In containerised deployments, clients outside the container network hit Keycloak on a host-accessible URL (e.g. <code>http://localhost:8080</code>) while ACA-Py reaches Keycloak on an internal Docker network URL (e.g. <code>http://keycloak:8080</code>). These produce different <code>iss</code> values, causing <code>--oauth-issuer</code> validation to fail.</p>
+<p>The recommended fix is to set <code>KC_HOSTNAME</code> in Keycloak so that the <code>iss</code> claim always uses a single canonical URL regardless of which network interface handled the request:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># docker-compose.yml — Keycloak service</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">KC_HOSTNAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">KC_HOSTNAME_PORT</span><span class="p">:</span><span class="w"> </span><span class="s">"8080"</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">KC_HOSTNAME_STRICT</span><span class="p">:</span><span class="w"> </span><span class="s">"false"</span>
+</code></pre></div>
+<p>Then set <code>--oauth-issuer</code> to match that canonical URL:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>--oauth-issuer<span class="w"> </span>http://localhost:8080/realms/acapy
+</code></pre></div>
+<p>ACA-Py's <code>--oauth-jwks-uri</code> can still use the internal Docker network hostname for the JWKS fetch — issuer validation is a string comparison against the <code>iss</code> claim and requires no network call.</p>
+<hr />
+<h2 id="demo-docker-compose-with-keycloak">Demo: Docker Compose with Keycloak<a class="headerlink" href="#demo-docker-compose-with-keycloak" title="Permanent link">&para;</a></h2>
+<p>A self-contained demo is provided in <a href="../../demo/demo-authserver/"><code>demo/demo-authserver/</code></a>. It starts three services:</p>
 <table>
 <thead>
 <tr>
-<th><strong>Scenario</strong></th>
-<th><strong>Approach</strong></th>
+<th>Service</th>
+<th>Image</th>
+<th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Demo</strong></td>
-<td>Use CLI flags such as <code>--reuse-connections</code>.</td>
+<td><code>keycloak</code></td>
+<td><code>quay.io/keycloak/keycloak:24</code></td>
+<td>Authorization Server, pre-loaded with the <code>acapy</code> realm</td>
 </tr>
 <tr>
-<td><strong>Production</strong></td>
-<td>Rely on API parameters (<code>use_did_method</code>, <code>multi_use</code>) for reuse events.</td>
+<td><code>wallet-db</code></td>
+<td><code>postgres:16</code></td>
+<td>ACA-Py wallet storage</td>
+</tr>
+<tr>
+<td><code>acapy</code></td>
+<td>Built from repo</td>
+<td>ACA-Py configured as an OAuth2 Resource Server</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Quick start:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">cd</span><span class="w"> </span>demo/demo-authserver
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>podman<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build<span class="w">      </span><span class="c1"># or docker compose up --build</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># In a second terminal, once all services are healthy:</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>./scripts/setup-tenant.sh
+</code></pre></div>
+<h3 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link">&para;</a></h3>
+<p>All scripts read common settings from a <code>.env</code> file if present and default sensibly otherwise.</p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>setup-tenant.sh</code></td>
+<td>Creates an ACA-Py sub-wallet using an admin token, then updates the Keycloak <code>wallet-id</code> claim on the <code>acapy-tenant-demo</code> client. Must be run before the tenant scripts.</td>
+</tr>
+<tr>
+<td><code>get-admin-token.sh</code></td>
+<td>Obtains an admin token via <code>client_credentials</code> grant for <code>acapy-controller</code> and prints the decoded claims and raw token.</td>
+</tr>
+<tr>
+<td><code>get-tenant-token.sh</code></td>
+<td>Obtains a tenant token via <code>client_credentials</code> grant for a confidential tenant client (defaults to <code>acapy-tenant-demo</code>). Prints decoded claims including <code>wallet_id</code>.</td>
+</tr>
+<tr>
+<td><code>get-user-token.sh</code></td>
+<td>Creates a demo user in Keycloak (if needed) and performs a full <strong>authorization code + PKCE</strong> flow. Prints a Keycloak login URL to open in the browser; a local callback server on port 9999 receives the code and exchanges it for a token.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example usage after <code>setup-tenant.sh</code>:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Server-to-server admin token</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>./scripts/get-admin-token.sh
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Server-to-server tenant token (confidential client)</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>./scripts/get-tenant-token.sh
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Browser-based user token (public client, PKCE)</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>./scripts/get-user-token.sh
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1"># Call ACA-Py with a token</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nv">TOKEN</span><span class="o">=</span><span class="k">$(</span>./scripts/get-admin-token.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-A1<span class="w"> </span><span class="s2">"Access token:"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-1<span class="k">)</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>curl<span class="w"> </span>-s<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span><span class="w"> </span>http://localhost:8031/multitenancy/wallets<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>.
+</code></pre></div>
+<hr />
+<h2 id="migrating-from-api-key-aca-py-jwt">Migrating from API Key / ACA-Py JWT<a class="headerlink" href="#migrating-from-api-key-aca-py-jwt" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--admin-api-key &lt;key&gt;</code></td>
+<td>Remove; add <code>--oauth-jwks-uri</code> (and/or introspection params)</td>
+</tr>
+<tr>
+<td><code>--admin-insecure-mode</code></td>
+<td>Remove; configure OAuth</td>
+</tr>
+<tr>
+<td><code>--multitenant-jwt-secret &lt;secret&gt;</code></td>
+<td>Still required by the multitenant subsystem but unused for token validation in OAuth mode</td>
+</tr>
+<tr>
+<td><code>POST /multitenancy/wallet/{id}/token</code></td>
+<td>Clients obtain tokens from the AS directly</td>
+</tr>
+<tr>
+<td><code>X-API-Key: &lt;key&gt;</code> request header</td>
+<td><code>Authorization: Bearer &lt;token&gt;</code> request header</td>
+</tr>
+<tr>
+<td><code>@admin_authentication</code> on admin routes</td>
+<td>Unchanged decorator; now enforces <code>acapy:admin</code> scope in OAuth mode</td>
+</tr>
+<tr>
+<td><code>@tenant_authentication</code> on tenant routes</td>
+<td>Unchanged decorator; now enforces <code>acapy:tenant</code> or <code>acapy:admin</code> scope in OAuth mode</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<p><strong>Contributor Note:</strong><br />
-Tested with BC Wallet &amp; Hologram apps. Reuse functionality has been confirmed to work with <code>did:peer:2</code> (see <a href="https://github.com/hyperledger/aries-cloudagent-python/issues/3532">Issue #3532</a>).</p>
-<p>For more information on Qualified DIDs (e.g., <code>did:peer:2</code>, <code>did:peer:4</code>), visit the <a href="https://aca-py.org/latest/features/QualifiedDIDs/">Qualified DIDs Documentation</a>.</p>
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Unmanaged wallets are not supported in OAuth mode.</strong> The ACA-Py-issued JWT could carry a <code>wallet_key</code> for wallets whose keys are not stored by ACA-Py. An OAuth access token from an external AS must not contain cryptographic wallet keys; use managed wallets (<code>key_management_mode: managed</code>) with OAuth.</li>
+<li><strong>WebSocket authentication</strong> uses the same bearer token presented in the initial HTTP upgrade request. In-message <code>x-api-key</code> re-authentication is not available in OAuth mode. The admin event stream (<code>GET /ws</code> on the admin port) is scope- and wallet-aware: an <code>acapy:admin</code> token receives events for all wallets, while an <code>acapy:tenant</code> / <code>acapy:tenant:read</code> token receives only events for the <code>wallet_id</code> in its token (and, in multitenant mode, a token without a <code>wallet_id</code> is not permitted to receive events). This mirrors the tenant isolation enforced on the HTTP routes. Note this is the admin notification websocket, distinct from any DIDComm WebSocket inbound transport.</li>
+<li><strong>JWKS key rotation</strong> is handled automatically by <code>PyJWKClient</code>'s built-in cache, which re-fetches the key set when a token references an unknown key ID (<code>kid</code>). No ACA-Py restart is required.</li>
+</ul>
 
 
 
@@ -3647,7 +4321,7 @@ Tested with BC Wallet &amp; Hologram apps. Reuse functionality has been confirme
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../DIDResolution/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DID Resolution">
+          <a href="../AdminAPI/" class="md-footer__link md-footer__link--prev" aria-label="Previous: The Admin API">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3657,20 +4331,20 @@ Tested with BC Wallet &amp; Hologram apps. Reuse functionality has been confirme
                 Previous
               </span>
               <div class="md-ellipsis">
-                DID Resolution
+                The Admin API
               </div>
             </div>
           </a>
         
         
           
-          <a href="../AnonCredsMethods/" class="md-footer__link md-footer__link--next" aria-label="Next: Publishing AnonCreds Objects To Other Ledgers/Verifiable Data Registries">
+          <a href="../KanonStorage/" class="md-footer__link md-footer__link--next" aria-label="Next: Kanon Storage">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Publishing AnonCreds Objects To Other Ledgers/Verifiable Data Registries
+                Kanon Storage
               </div>
             </div>
             <div class="md-footer__button md-icon">
