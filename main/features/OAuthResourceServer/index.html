@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="https://raw.githubusercontent.com/hyperledger/aries-rfcs/main/collateral/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -3744,12 +3744,16 @@
 <li><a href="#overview">Overview</a></li>
 <li><a href="#request-flow">Request Flow</a></li>
 <li><a href="#scopes">Scopes</a></li>
+<li><a href="#scope-to-decorator-mapping">Scope-to-decorator mapping</a></li>
 <li><a href="#configuration">Configuration</a></li>
 <li><a href="#startup-parameters">Startup Parameters</a></li>
 <li><a href="#environment-variables">Environment Variables</a></li>
 <li><a href="#token-validation-modes">Token Validation Modes</a></li>
 <li><a href="#multitenancy-and-the-wallet_id-claim">Multitenancy and the <code>wallet_id</code> Claim</a></li>
+<li><a href="#provisioning-flow">Provisioning flow</a></li>
 <li><a href="#request-claim-storage-and-compatibility">Request Claim Storage and Compatibility</a></li>
+<li><a href="#why-both-metadata-and-settings">Why both metadata and settings?</a></li>
+<li><a href="#recommended-access-pattern-for-core-and-plugins">Recommended access pattern for core and plugins</a></li>
 <li><a href="#annotating-routes-with-scopes">Annotating Routes with Scopes</a></li>
 <li><a href="#authorization-server-setup-guidance">Authorization Server Setup Guidance</a></li>
 <li><a href="#keycloak-example">Keycloak Example</a></li>
@@ -4163,7 +4167,7 @@ handle both storage paths safely.</p>
 <p>ACA-Py's <code>--oauth-jwks-uri</code> can still use the internal Docker network hostname for the JWKS fetch — issuer validation is a string comparison against the <code>iss</code> claim and requires no network call.</p>
 <hr />
 <h2 id="demo-docker-compose-with-keycloak">Demo: Docker Compose with Keycloak<a class="headerlink" href="#demo-docker-compose-with-keycloak" title="Permanent link">&para;</a></h2>
-<p>A self-contained demo is provided in <a href="../../demo/demo-authserver/"><code>demo/demo-authserver/</code></a>. It starts three services:</p>
+<p>A self-contained demo is provided in <a href="https://github.com/openwallet-foundation/acapy/tree/main/demo/demo-authserver"><code>demo/demo-authserver/</code></a>. It starts three services:</p>
 <table>
 <thead>
 <tr>
@@ -4381,10 +4385,10 @@ handle both storage paths safely.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.footer", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.footer", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
